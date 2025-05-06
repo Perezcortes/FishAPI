@@ -1,5 +1,9 @@
 # 🐟 API fishapi Para productos de pesca 
 
+<div>
+  <img src="https://img.shields.io/badge/FastAPI-0.95.0-009688?logo=fastapi&style=for-the-badge" alt="FastAPI">
+</div>
+
 API RESTful desarrollada con **FastAPI** y **SQLAlchemy** para gestionar productos de una tienda. Esta API permite listar, crear (individual o en lote), actualizar y eliminar productos.
 
 ---
