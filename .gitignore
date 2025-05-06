@@ -4,6 +4,7 @@
 
 # Dependencias
 node_modules/
+.venv/
 
 # Logs y archivos temporales
 *.log

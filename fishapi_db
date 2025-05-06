@@ -1,0 +1,111 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 04, 2025 at 12:36 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `fishapi_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `productos`
+--
+
+CREATE TABLE `productos` (
+  `id_producto` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `descripcion` text DEFAULT NULL,
+  `precio` float NOT NULL,
+  `stock` int(11) NOT NULL,
+  `marca` varchar(100) DEFAULT NULL,
+  `imagen` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `productos`
+--
+
+INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `precio`, `stock`, `marca`, `imagen`) VALUES
+(1, 'Caña de Pescar Spinning', 'Caña de pescar ideal para pesca en agua dulce.', 40.99, 8, 'Shimano', 'https://acdn-us.mitiendanube.com/stores/001/192/523/products/diseno-sin-titulo-4-11-146fbf50202e1f4c4416642169457607-1024-1024.jpg'),
+(2, 'Carrete de Pesca Baitcasting', 'Carrete con sistema de frenado magnético para mayor control.', 89.5, 80, 'Abu Garcia', 'https://s.alicdn.com/@sc04/kf/Hfc8515ae7ad84da4859bd5cb0404b071Z.jpg_720x720q50.jpg'),
+(3, 'Caja de Señuelos 25 piezas', 'Set completo con variedad de señuelos artificiales.', 34.99, 150, 'Plusinno', 'https://acdn-us.mitiendanube.com/stores/001/480/155/products/16storgs1-f1906c403600bf64ff16461229083749-1024-1024.jpg'),
+(4, 'Red de Pesca Plegable', 'Red portátil y plegable para atrapar peces pequeños.', 15.2, 60, 'KastKing', 'https://m.media-amazon.com/images/I/713LRZhCCqL.jpg'),
+(5, 'Gafas Polarizadas UV400', 'Protección solar para pescadores, reduce reflejos en el agua.', 22, 200, 'KastKing', 'https://ae01.alicdn.com/kf/S9a15a85cbd934768b12ac0d2ad673a69d.jpg'),
+(6, 'Tijeras Multiusos de Pesca', 'Tijeras con filo de acero inoxidable, corta líneas trenzadas fácilmente.', 9.75, 300, 'Booms Fishing', 'https://i.ebayimg.com/images/g/Qd8AAOSw5gRg1msk/s-l1200.jpg'),
+(7, 'Pinzas de Pesca con Mosquetón', 'Pinzas de aluminio resistentes a la corrosión con funda y cable retráctil.', 17.8, 120, 'Piscifun', 'https://m.media-amazon.com/images/I/41hjkLewlYL._AC_UF894,1000_QL80_.jpg'),
+(8, 'Sombrero de Pesca UV Protección', 'Sombrero con ala ancha y protección para cuello y cara.', 18.95, 8, 'Einskey', 'https://m.media-amazon.com/images/I/71X7lnGHXqL.jpg'),
+(9, 'Balanza Digital para Pesca', 'Balanza portátil hasta 50 kg con cinta métrica incluida.', 13.6, 130, 'Dr.meter', 'https://m.media-amazon.com/images/I/51Ayo8FOefL.jpg'),
+(10, 'Maleta Impermeable para Pesca', 'Bolsa organizadora con múltiples compartimentos y resistente al agua.', 39.99, 70, 'Wild River', 'https://m.media-amazon.com/images/I/71eXJ0QktwS.jpg'),
+(11, 'Luz LED Sumergible para Pesca Nocturna', 'Atrayente de peces con luz verde de alta intensidad, resistente al agua.', 18.99, 85, 'NightFish', 'https://m.media-amazon.com/images/I/61iyqZqIOvL._AC_UF894,1000_QL80_.jpg'),
+(12, 'Anzuelos de Acero Inoxidable 100 piezas', 'Variedad de tamaños para pesca en agua dulce o salada.', 12.5, 300, 'Mustad', 'https://bajamark.mx/pub/media/catalog/product/cache/22eaad718985f7d9d23466a2988d1f73/c/a/captura1_1_49.png'),
+(13, 'Organizador de Accesorios de Pesca', 'Caja con divisores ajustables para guardar señuelos, anzuelos y plomos.', 18.3, 100, 'Storm', 'https://dojiw2m9tvv09.cloudfront.net/26150/product/caja4225.png'),
+(14, 'Camiseta Térmica de Pesca con Protección Solar', 'Secado rápido, manga larga, ideal para días calurosos en el agua.', 27.8, 60, 'Columbia', 'https://m.media-amazon.com/images/I/517zFMeZtNL._AC_SY1000_.jpg'),
+(15, 'Alarma de Mordida para Caña de Pesca', 'Dispositivo con sonido y luz que alerta cuando hay picada.', 10.99, 180, 'Goture', 'https://m.media-amazon.com/images/I/715YyX+jJYL._AC_UF894,1000_QL80_.jpg'),
+(16, 'Moscas Artificiales para Pesca con Mosca', 'Kit de 32 moscas variadas en caja resistente al agua.', 22.45, 95, 'Outdoor Planet', 'https://m.media-amazon.com/images/I/61xoWme+yAL.jpg'),
+(17, 'Cinturón Porta Cañas Ajustable', 'Permite sostener la caña mientras se cambia el anzuelo o señuelo.', 14.9, 70, 'FishFun', 'https://m.media-amazon.com/images/I/61-OmOPUriL._AC_UF894,1000_QL80_.jpg'),
+(18, 'Soporte para Caña de Pescar con Pinza', 'Se fija a la orilla, ajustable en ángulo y rotación.', 11.6, 150, 'Hurricane', 'https://m.media-amazon.com/images/I/61EaQ5lGvQL._AC_UF350,350_QL80_.jpg'),
+(19, 'Mochila Táctica Impermeable de Pesca', 'Con compartimentos laterales, portabotellas y tirantes acolchados.', 49.99, 50, 'Wild River', 'https://m.media-amazon.com/images/I/51K+rh91iuL._AC_SY1000_.jpg'),
+(20, 'Set de Plomos para Pesca', 'Distintos gramajes para ajustar la profundidad de la línea.', 8.2, 400, 'THKFISH', 'https://m.media-amazon.com/images/I/813v3iY2XNL.jpg'),
+(21, 'Carrete Spinning de Alta Velocidad', 'Diseñado para lanzamiento suave y recuperación rápida, ideal para pesca en río o mar.', 39.95, 75, 'KastKing', 'https://m.media-amazon.com/images/I/71n+d4kmL7L.jpg'),
+(22, 'Botas Impermeables Antideslizantes para Pesca', 'Suela de goma duradera, ideales para ríos y terrenos fangosos.', 54.99, 40, 'Frogg Toggs', 'https://m.media-amazon.com/images/I/51Nmo-5I8WL._AC_SY300_.jpg'),
+(23, 'Set de Señuelos Crankbait y Minnow 10 piezas', 'Diseños realistas con movimiento natural, atracción de depredadores.', 19.9, 120, 'Truscend', 'https://m.media-amazon.com/images/I/71VRgZNGjVL._AC_UF1000,1000_QL80_.jpg'),
+(24, 'Red de Pesca Plegable con Mango Extensible', 'Ligera y resistente, facilita la recolección sin dañar al pez.', 23.7, 90, 'Plusinno', 'https://m.media-amazon.com/images/I/71VHtCwjbcL.jpg'),
+(25, 'Guantes Antideslizantes para Pesca', 'Con recubrimiento en palma para mejor agarre y dedos descubiertos.', 13.45, 130, 'Palmyth', 'https://m.media-amazon.com/images/I/71p0K62KuAL.jpg'),
+(26, 'Termo Aislado para Bebidas 1L', 'Mantiene líquidos fríos o calientes por horas, ideal para jornadas largas.', 17.8, 200, 'Stanley', 'https://m.media-amazon.com/images/I/81pavSQk7uL._AC_UF894,1000_QL80_.jpg'),
+(27, 'Chaleco de Pesca con Múltiples Bolsillos', 'Diseñado para movilidad y almacenamiento de herramientas.', 34.25, 65, 'Kampak', 'https://m.media-amazon.com/images/I/71FwXw6+lDL._AC_UF894,1000_QL80_.jpg'),
+(28, 'Lentes Polarizados UV para Pesca', 'Reduce el brillo del agua, mejora la visibilidad bajo la superficie.', 24.99, 110, 'Daiwa', 'https://http2.mlstatic.com/D_NQ_NP_664874-MLU77339002172_072024-O.webp'),
+(29, 'Pinza Multiusos para Pesca con Corta Líneas', 'Acero inoxidable resistente a la corrosión, incluye funda y cordón.', 15.6, 140, 'Piscifun', 'https://m.media-amazon.com/images/I/61v7RIoKv-L._AC_UF894,1000_QL80_.jpg'),
+(30, 'Balanza Digital Portátil con Gancho', 'Mide el peso del pez con precisión, hasta 50 kg, incluye cinta métrica.', 14.99, 160, 'Dr.meter', 'https://m.media-amazon.com/images/I/51VU+s9BSsL.jpg'),
+(31, 'Señuelo Crankbait Flotante 8 cm', 'Diseño realista con movimiento de natación vibrante, ideal para bass y trucha.', 8.5, 100, 'Rapala', 'https://m.media-amazon.com/images/I/51DHVCNgRjL._AC_UF894,1000_QL80_.jpg'),
+(32, 'Jig de Pesca con Falda de Silicona', 'Atractivo para depredadores grandes, colores naturales para aguas turbias.', 5.99, 150, 'Z-Man', 'https://m.media-amazon.com/images/I/71JM-O2pKpL.jpg'),
+(33, 'Soft Bait Tipo Gusano 10 cm (Pack de 20)', 'Imitación flexible de gusano con olor a carnada, eficaz en agua dulce.', 9.2, 200, 'Yamamoto', 'https://m.media-amazon.com/images/I/614kNPJ2H+L._AC_UF894,1000_QL80_.jpg'),
+(34, 'Señuelo Tipo Popper con Rattling', 'Flotante, salpicador con sonido, excelente para pesca superficial.', 7.99, 95, 'Rebel', 'https://m.media-amazon.com/images/I/71yVVDK+8gL._AC_UF894,1000_QL80_.jpg'),
+(35, 'Spinnerbait con Hoja Doble', 'Ideal para cubrir zonas amplias y aguas con vegetación.', 6.75, 130, 'Booyah', 'https://m.media-amazon.com/images/I/71d3k4NbZ5L._AC_UF1000,1000_QL80_.jpg'),
+(36, 'Swimbait Articulado 13 cm', 'Cuerpo segmentado con movimiento de nado natural, colores vivos.', 11.3, 9, 'Savage Gear', 'https://m.media-amazon.com/images/I/5144dnGSiOL._AC_UF894,1000_QL80_.jpg'),
+(37, 'Topwater Frog Señuelo Antienganche', 'Diseño hueco para flotar sobre vegetación, anzuelos ocultos.', 6.4, 120, 'Lunkerhunt', 'https://m.media-amazon.com/images/I/71iXD+0EJLL._AC_UF894,1000_QL80_.jpg'),
+(38, 'Kit de Señuelos Metálicos para Jigging (Set de 4)', 'Colores brillantes para atracción en profundidad, ideal en mar.', 17.5, 60, 'Sougayilang', 'https://m.media-amazon.com/images/I/715gUuzuw7L.jpg'),
+(39, 'Buzzbait con Hélice Rotatoria', 'Crea ruido y burbujas al recogerlo rápidamente, eficaz para black bass.', 7.1, 110, 'Strike King', 'https://m.media-amazon.com/images/I/71kctBiEiOL._AC_UF894,1000_QL80_.jpg'),
+(40, 'Kit de Minnows de Alta Flotación (3 piezas)', 'Imitación de peces pequeños con reflejo holográfico y anzuelos triples.', 19.99, 2, 'Goture', 'https://m.media-amazon.com/images/I/61j4lvEyStL.jpg'),
+(51, 'Caña de Pescar Okuma Cedros CSX', 'Caña de pesca Okuma Cedros CSX para pesca de mar, acción rápida y cuerpo de carbono.', 1399.99, 25, 'Okuma', 'https://m.media-amazon.com/images/I/51ujFbG774L._AC_UF894,1000_QL80_.jpg'),
+(52, 'Caña Daiwa Procaster X Spin 2.40m', 'Caña de spinning de 2.40 metros, acción rápida, ideal para pesca en agua dulce. Construcción en carbono con anillas de óxido de titanio.', 89.99, 33, 'Daiwa', 'https://m.media-amazon.com/images/I/61hL863bvUL._AC_UF894,1000_QL80_.jpg');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id_producto`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
